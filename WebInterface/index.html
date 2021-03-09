@@ -23,15 +23,17 @@
             <section>
                 <h3>Section 1</h3>
 
-                <label for="link">
-                    Link : <input type="text" name="" value="">
-                </label>
+                <form class="" action="index.html" method="post" onsubmit="ajax(event)">
+                    <label for="link">
+                        Link : <input id="linkInput" type="text" name="link[]" value="">
+                    </label>
 
-                <label for="link">
-                    Upload : <input type="file" name="" value="">
-                </label>
+                    <label for="file">
+                        Upload : <input id="fileInput" type="file" name="file[]" value="" onchange="addFiles(event)">
+                    </label>
 
-                <button type="button" name="button">Go</button>
+                    <button type="submit" name="button">Go</button>
+                </form>
 
             </section>
         </main>
