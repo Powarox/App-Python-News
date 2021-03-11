@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    color: #333333;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0 10px;
+    list-style-type: none;
+}
+
+#arrow {
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+    color: #348AF4;
+    font-size: 30px;
+}
+
+
+/* ----- Header ----- */
+.menu {
+    padding: 0 50px;
+    display: flex;
+    justify-content: flex-start;
+    background: #348AF4;
+}
+
+.menu a {
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 20px;
+    padding: 10px;
+    border: 2px solid #348AF4;
+    transition: 0.5s;
+}
+
+.menu a:hover {
+    color: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+
+header h1 {
+    text-align: center;
+    background: #DDD;
+    margin: 0;
+    padding: 20px 0;
+}
+
+
+main {
+    margin: 50px 20px;
+}
+
+
+
+
+
+
+/* ----- Upload Section ----- */
+.upload {
+	margin: 75px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+#dropFileForm {
+    width: 100%;
+	text-align: center;
+}
+
+.fileHover{
+	box-shadow: 0 0 2em #fe4a49;
+	border: 2px dashed #fe4a49;
+}
+
+#dropFileDiv {
+	width: 70%;
+    height: 250px;
+    background: #DDD;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    transition: 0.6s;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#dropFileDiv input[type='file'] {
+    display: none;
+}
+
+#dropFileDiv label {
+    cursor: pointer;
+    padding: 16px;
+    color: #26547C;
+    align-self: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.6s;
+}
+
+#dropFileDiv label:hover{
+    color: #499F68;
+    border: 2px solid #499F68;
+    transition: 0.9s;
+}
+
+#progressBar {
+	width: 60%;
+	transition: 0.5s;
+}
+
+#uploadButton {
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 14px 40px;
+    text-align: center;
+	font-weight: bold;
+    font-size: 18px;
+    color: #26547C;
+    background: #ffcf60;
+	border: 3px solid #ffcf60;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#uploadButton:hover {
+	color: white;
+    background: #499F68;
+    border: 3px solid #499F68;
+    transition: 0.5s;
+}
+
+
+
+/* ----- Preview Info Section ----- */
+.previewInfo {
+    border-bottom: 2px solid #DDD;
+    margin: 0 15%;
+}
+
+.previewInfo .sectionMenu {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.previewInfo .sectionMenu a {
+    color: #348AF4;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+
+.previewInfo .sectionMenu a:hover {
+    border-radius: 5px;
+    background: #DDD;
+}
+
+
+
+/* ----- Preview Meta Section ----- */
+.previewMeta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.previewMeta .card {
+    margin: 20px;
+    padding: 0 20px;
+    border: 2px solid #DDD;
+    border-radius: 10px;
+}
+
+.previewMeta .card .img {
+    display: flex;
+    justify-content: space-around;
+    background: #DDD;
+}
+
+.previewMeta .card img {
+    max-width: 320px;
+    max-height: 350px;
+    border-radius: 10px;
+}
+
+.previewMeta .card ul li {
+    display: grid;
+    padding: 0 5px;
+    grid-template-columns: 1fr 3fr;
+    border-top: 1px solid #DDD;
+}
+
+#elemP {
+    background: #EEE;
+}
+
+
+
+
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+
+
+/*  */
