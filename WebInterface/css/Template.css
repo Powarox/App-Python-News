@@ -62,11 +62,43 @@ main {
 
 
 
+/* ----- Link Section ----- */
+.link {
+	margin: 40px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+#linkForm {
+    width: 100%;
+    text-align: center;
+}
+
+#linkSelect {
+    height: 31px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#linkInput {
+    width: 50%;
+    height: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#linkButton {
+    height: 31px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
 
 
 /* ----- Upload Section ----- */
 .upload {
-	margin: 75px 0;
+	margin: 40px 0;
 	display: flex;
 	justify-content: space-around;
 }
@@ -140,6 +172,10 @@ main {
     border: 3px solid #499F68;
     transition: 0.5s;
 }
+
+
+
+
 
 
 

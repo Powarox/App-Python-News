@@ -1,17 +1,10 @@
 "use strict"
 
-let droppedFiles;
 let link = document.getElementById('linkInput');
-
-function addFiles(event){
-    console.log('addFiles');
-    droppedFiles = event.target.files || event.dataTransfer.files;
-}
 
 function ajax(event){
     event.preventDefault();
 
-    console.log(droppedFiles);
     console.log(link.value);
 
     let data = link.value;

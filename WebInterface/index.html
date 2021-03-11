@@ -6,27 +6,42 @@
         <link rel="stylesheet" href="css/Template.css"/>
     	<!-- <link rel="stylesheet" href="Responsive.css"/> -->
     	<script defer src="js/Upload.js"></script>
-        <script defer src="js/Actions.js"></script>
-        <script defer src="js/CustomElements/Component.js"></script>
+        <script defer src="js/Ajax.js"></script>
     	<script src="https://kit.fontawesome.com/646143606b.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header id="topHeader">
             <nav class="menu">
-                <a href="#">Home</a>
-                <a href="#">Actions</a>
-                <a href="#">Other</a>
+                <a href="index.html">Home</a>
+                <a href="Pages/Result.html">Result</a>
+                <a href="Pages/Graph.html">Graph</a>
+                <a href="index.html">Other</a>
             </nav>
 
-            <h1>Test Librairie PHP ...name...</h1>
+            <h1>Knowledge Acquisition Pipeline</h1>
 
             <a id="arrow" href="#topHeader"><i class="fas fa-chevron-up"></i></a>
         </header>
 
         <main>
-<!-- Section upload permettant le drag & drop -->
+            <section class="link">
+                <form id="linkForm" action="index.html" method="post" onsubmit="ajax(event)">
+                    <h3>Give a link here : </h3>
+                    <select id="linkSelect" class="" name="" value="test">
+                        <option value="">Select From Exemple</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                    </select>
+
+                    <input id="linkInput" type="text" name="link[]" value="" placeholder="http://...">
+
+                    <button id="linkButton"type="submit" name="button"><i class="fas fa-cog"></i> Analyse</button>
+                </form>
+            </section>
+
             <section class="upload">
                 <form id="dropFileForm" action="" method="post" onsubmit="uploadFiles(event)">
+                    <h3>Upload your document here : </h3>
     	            <div id="dropFileDiv"
     	            ondragover="overrideDefault(event);fileHover();" ondragenter="overrideDefault(event);fileHover();" ondragleave="overrideDefault(event);fileHoverEnd();" ondrop="overrideDefault(event);fileHoverEnd();
     	                  addFiles(event);">
@@ -46,69 +61,10 @@
     	            <input id="uploadButton" type="submit" value="Upload">
     	        </form>
             </section>
-
-            <section class="previewInfo">
-                <!-- <img src="default_pdf_image.jpg" alt="Une image"> -->
-                <nav class="sectionMenu">
-                    <a href="#">File</a>
-                    <a href="#">XMP</a>
-                    <a href="#">IPC</a>
-                    <a href="#">IPC</a>
-                    <a href="#">Other</a>
-                </nav>
-            </section>
-
-            <section class="previewMeta">
-                <div class="card" id="file_box">
-                    <h2>File</h2>
-
-                    <ul>
-                        <li id="elemP">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                        <li id="elemI">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                        <li id="elemP">
-                            <p><strong>File</strong></p>
-                            <p>des information ici des information ici des information ici des information ici des information ici</p>
-                        </li>
-                        <li id="elemI">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h2>XMP</h2>
-
-                    <ul>
-                        <li id="elemP">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                        <li id="elemI">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                        <li id="elemP">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                        <li id="elemI">
-                            <p><strong>File</strong></p>
-                            <p>des information ici</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
         </main>
 
         <footer>
-            <p>Test application of Librairie Php metadata</p>
+            <p>Copyright @ Moriniere Robin - Mohamed Lamine Seck</p>
         </footer>
     </body>
 </html>
