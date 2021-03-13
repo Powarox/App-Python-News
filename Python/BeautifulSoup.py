@@ -1,18 +1,10 @@
-# pip install beautifulsoup4 requests
-
 import json
 import requests
 from bs4 import BeautifulSoup as bs
 
-from PIL import Image
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud, ImageColorGenerator
-
-import urllib.request
-
 
 # BeautifulSoup Class
-class BBC:
+class Crawler:
     def __init__(self, url):
         req = requests.get(url)
         self.soup = bs(req.content, 'html.parser')
@@ -42,88 +34,9 @@ class BBC:
         return [img['src'] for img in article.find_all('img')]
 
 
-# WordCloud Save Image
-def wordCloudSave(elem, name):
-    WordCloud.to_file(elem, "../Python/Result/" + self.folder + name)
-
-# MathplotLib Save Image
-def matplotlibSave(name):
-    plt.savefig("../Python/Result/" + self.folder + name, format = "png")
-
-# Save Img from url
-def saveImgUrl(url, name):
-    urllib.request.urlretrieve(url, '../Python/Result/' + name)
-
-# Save data to json file
-def saveFile(data, name):
-    with open('../Python/Result/' + name + '.json', "w") as filout:
-        result = data
-        filout.write(result)
-
-# Encode data array to json array
-def jsonEncode(data):
-    jsonData = json.dumps(data)
-    return jsonData
-
-def jsonDecode(jsonData):
-    data = json.loads(jsonData)
-    return data
-
-
-# # Exemple 1
-# parsed = BBC('https://www.bbc.com/news/newsbeat-56264594')
-# # Save Article Images
-# index = 0
-# for src in parsed.allImg:
-#     saveImgUrl(src, 'Ex1/Img/image' + str(index) + '.jpg')
-#     index += 1
-#
-# # Save Article Content
-# data = dict()
-# data['title'] = parsed.title
-# data['sousTitle'] = parsed.sousTitle
-# data['content'] = parsed.body
-#
-# jsonData = jsonEncode(data)
-# saveFile(jsonData, 'Ex1/JsonContentFile')
 
 
 
-# # Exemple 2
-# parsed = BBC('https://www.bbc.com/news/technology-56357526')
-# # Save Article Images
-# index = 0
-# for src in parsed.allImg:
-#     saveImgUrl(src, 'Ex2/Img/image' + str(index) + '.jpg')
-#     index += 1
-#
-# # Save Article Content
-# data = dict()
-# data['title'] = parsed.title
-# data['sousTitle'] = parsed.sousTitle
-# data['content'] = parsed.body
-#
-# jsonData = jsonEncode(data)
-# saveFile(jsonData, 'Ex2/JsonContentFile')
-
-
-
-# # Exemple 3
-# parsed = BBC('https://www.bbc.com/news/world-asia-56252695')
-# # Save Article Images
-# index = 0
-# for src in parsed.allImg:
-#     saveImgUrl(src, 'Ex3/Img/image' + str(index) + '.jpg')
-#     index += 1
-#
-# # Save Article Content
-# data = dict()
-# data['title'] = parsed.title
-# data['sousTitle'] = parsed.sousTitle
-# data['content'] = parsed.body
-#
-# jsonData = jsonEncode(data)
-# saveFile(jsonData, 'Ex3/JsonContentFile')
 
 
 

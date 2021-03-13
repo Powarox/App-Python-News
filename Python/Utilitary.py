@@ -19,16 +19,20 @@ class Utilitary:
 
     # Save Img from url
     def saveImgUrl(self, url, name):
-        urllib.request.urlretrieve(url, '../Python/Result/Img/' + name)
+        urllib.request.urlretrieve(url, '../Python/Result/' + name)
 
     # Save data to json file
-    def saveFile(self, data):
-        with open(Path("../Python/Result/JsonFile.json"), "w") as filout:
+    def saveFile(self, data, name):
+        with open('../Python/Result/' + name + '.json', "w") as filout:
             result = data
             filout.write(result)
 
-    # Encode data array to json array
+    # Encode data to jsonArray
     def jsonEncode(self, data):
-        # data = json.loads(jsonData)
         jsonData = json.dumps(data)
         return jsonData
+
+    # Decode jsonArray to data
+    def jsonDecode(self, jsonData):
+        data = json.loads(jsonData)
+        return data
