@@ -1,14 +1,22 @@
 # pip install beautifulsoup4 requests
 
+import json
 import requests
 from bs4 import BeautifulSoup as bs
 
+from PIL import Image
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud, ImageColorGenerator
+
+
+# BeautifulSoup Class
 class Wiki:
     def __init__(self, url):
         req = requests.get(url)
         self.soup = bs(req.content, "html.parser")
         self.body = self.get_body()
         self.title = self.get_title()
+        self.image = self.get_image()
 
     def get_title(self):
         return self.soup.h1.string # self.soup.title.string
@@ -17,11 +25,55 @@ class Wiki:
         body = self.soup.find('body')
         return [p.text for p in body.find_all("p")]
 
+    def get_image(self):
+        image = self.soup.find('img')
+        return image
 
-parsed = Wiki('https://en.wikipedia.org/wiki/Python_(programming_language)')
+
+# WordCloud Save Image
+def wordCloudSave(elem, name):
+    WordCloud.to_file(elem, "../Python/Result/" + self.folder + name)
+
+# MathplotLib Save Image
+def matplotlibSave(name):
+    plt.savefig("../Python/Result/" + self.folder + name, format = "png")
+
+# Save data to json file
+def saveFile(data):
+    with open(Path("../Python/Result/JsonFile.json"), "w") as filout:
+        result = data
+        filout.write(result)
+
+# Encode data array to json array
+def jsonEncode(data):
+    # data = json.loads(jsonData)
+    jsonData = json.dumps(data)
+    return jsonData
+
+
+parsed = Wiki('https://www.bbc.com/news/newsbeat-56264594')
 
 print(parsed.title) # Return titre
 print(parsed.body[1]) # Return list de tout les <p>
+print(parsed.image['src'])
+
+
+# Dict with data to save
+
+
+
+
+
+
+# parsed = Wiki('https://www.bbc.com/news/technology-56357526')
+#
+# parsed = Wiki('https://www.bbc.com/news/world-asia-56252695')
+#
+# parsed = Wiki('https://en.wikipedia.org/wiki/Python_(programming_language)')
+
+
+
+
 
 
 
