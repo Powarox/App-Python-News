@@ -7,10 +7,10 @@ function ajax(event){
 
     console.log(link.value);
 
-    let data = link.value;
+    let data = 'http://www.espn.com/soccer/club/manchester-city/382/blog/post/3803946/man-citys-road-to-the-quadruple-is-clear-but-do-they-have-the-energy-to-complete-a-historic-season';
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://dev-21606393.users.info.unicaen.fr/M1/Knowledge/Python/test.py');
+    xhr.open('POST', 'https://calvados.greyc.fr/index.html');
     xhr.responseType = 'json';
 
     let formData = new FormData();

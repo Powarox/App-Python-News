@@ -1,41 +1,33 @@
+import sys
 import json
-import requests
+from pathlib import Path
 
-data = json.loads(request.data)
+print(sys.argv[1])
 
+data = json.loads(sys.argv[1])
+print(data)
 send = json.dumps(data)
 
-url = 'https://dev-21606393.users.info.unicaen.fr/M1/Knowledge/WebInterface/index.html'
-req = request.post(url, data = send)
 
-print(req.text)
+print(send)
 
 
 
-#
-# from requests import Session
-#
-# session = Session()
-#
-# # HEAD requests ask for *just* the headers, which is all you need to grab the
-# # session cookie
-# session.head('http://sportsbeta.ladbrokes.com/football')
-#
-# response = session.post(
-#     url='http://sportsbeta.ladbrokes.com/view/EventDetailPageComponentController',
-#     data={
-#         'N': '4294966750',
-#         'form-trigger': 'moreId',
-#         'moreId': '156#327',
-#         'pageType': 'EventClass'
-#     },
-#     headers={
-#         'Referer': 'http://sportsbeta.ladbrokes.com/football'
-#     }
-# )
-#
-# print response.text
 
+
+
+# import requests
+# data = json.loads(requests.data)
+# send = json.dumps(data)
+# url = 'https://dev-21606393.users.info.unicaen.fr/M1/Knowledge/Python/index.php'
+# req = requests.post(url, data = send)
+# print(req.text)
+
+
+
+# with open(Path("../Python/JsonFile.json"), "w") as filout:
+#     result = send
+#     filout.write(result)
 
 
 
