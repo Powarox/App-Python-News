@@ -20,3 +20,8 @@ from wordcloud import WordCloud, ImageColorGenerator
 # MathplotLib Save
     def matplotlibSave(self, name):
         plt.savefig("../AppTraitement/Result/" + self.folder + name, format = "png")
+
+
+import urllib.request
+
+urllib.request.urlretrieve("http://www.digimouth.com/news/media/2011/09/google-logo.jpg", "local-filename.jpg")
