@@ -44,11 +44,14 @@ class Control {
 
         // var_dump($exemple['link'][0]);
 
-        $folder = 'File/'.$exemple['link'][0];
-        $file = 'JsonContentFile.json';
+        $folder = 'App/Files/'.$exemple['link'][0];
+        $file = '/JsonContentFile.json';
         $filePath = $folder . $file;
 
+        $jsonData = file_get_contents($filePath);
+        $data = json_decode($jsonData, true);
 
+        var_dump($data);
 
         $this->view->makeResultPage($this->feedback);
     }
