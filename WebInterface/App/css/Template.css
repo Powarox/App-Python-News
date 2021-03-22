@@ -93,6 +93,10 @@ main {
     font-size: 16px;
 }
 
+#linkInputGhost {
+    display: none;
+}
+
 
 
 
