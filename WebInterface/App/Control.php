@@ -40,7 +40,13 @@ class Control {
 
     public function fileLink(){
         $_SESSION['upload'] = 'link';
-        $exmple = $_POST;
+        $exemple = $_POST;
+
+        // var_dump($exemple['link'][0]);
+
+        $folder = 'File/'.$exemple['link'][0];
+        $file = 'JsonContentFile.json';
+        $filePath = $folder . $file;
 
 
 
