@@ -42,25 +42,21 @@ class Control {
         $_SESSION['upload'] = 'link';
         $exemple = $_POST;
 
-        var_dump($exemple['link'][0]);
+        if($exemple['link'][0] == ''){
+            $_SESSION['folder'] = 'Ex1';
+        }
+        else{
+            $_SESSION['folder'] = $exemple['link'][0];
+        }
 
-        $folder = 'App/Files/'.$exemple['link'][0];
-        $file = '/JsonContentFile.json';
-        $filePath = $folder . $file;
-
-        $jsonData = file_get_contents($filePath);
-        $data = json_decode($jsonData, true);
-
-        var_dump($data);
-
-        $this->view->makeResultPage($data, $folder, $this->feedback);
+        $this->affichageResult();
     }
 
     public function upload(){
         $_SESSION['upload'] = 'upload';
         // action ...
 
-        $this->view->makeResultPage($this->feedback);
+        $this->affichageResult();
     }
 
 
@@ -68,8 +64,18 @@ class Control {
         if(empty($_SESSION['upload'])){
             $this->view->displayNeedDocument();
         }
+        else{
+            $folder = 'App/Files/'.$_SESSION['folder'];
+            $file = '/JsonContentFile.json';
+            $filePath = $folder . $file;
 
-        $this->view->makeResultPage($this->feedback);
+            $jsonData = file_get_contents($filePath);
+            $data = json_decode($jsonData, true);
+
+            $images = $this->getImagesName($_SESSION['folder']);
+
+            $this->view->makeResultPage($data, $folder, $images, $this->feedback);
+        }
     }
 
 
@@ -79,5 +85,18 @@ class Control {
         }
 
         $this->view->makeGraphPage($this->feedback);
+    }
+
+
+
+
+
+    public function getImagesName($folder){
+        $files = scandir(__DIR__ .'/Files//'.$folder.'/Img');
+        if (!empty($files)) {
+            $elemAutre = array_shift($files);
+            $elemAutre = array_shift($files);
+        }
+        return $files;
     }
 }

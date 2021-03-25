@@ -7,6 +7,7 @@
     	<!-- <link rel="stylesheet" href="Responsive.css"/> -->
     	<script defer src="App/js/Upload.js"></script>
         <script defer src="App/js/Result.js"></script>
+        <script defer src="App/js/Graph.js"></script>
         <script defer src="App/js/Ajax.js"></script>
     	<script src="https://kit.fontawesome.com/646143606b.js" crossorigin="anonymous"></script>
     </head>

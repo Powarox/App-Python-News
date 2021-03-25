@@ -62,7 +62,7 @@ class View {
 
 
 // ################ Result ################ //
-    public function makeResultPage($data, $folder, $feedback){
+    public function makeResultPage($data, $folder, $images, $feedback){
         $this->title = 'Knowledge Acquisition Pipeline';
         $this->feedback = $feedback;
         $this->content = '
@@ -82,31 +82,29 @@ class View {
                 <div class="card">';
         foreach($data['content'] as $key => $value){
             $this->content .= '<p>'.$value.'</p>';
-            if($key % 10 == 0){
+            if(($key + 1) % 10 == 0){
                 $this->content .= '</div>
                 <div class="card">';
             }
         }
         $this->content .= '</div>';
+        $this->content .= '</div>';
+
         $this->content .= '
         <h2>Images Result</h2>
         <div class="" id="imageBox">';
 
-        $this->content .= '</div>';
+        foreach($images as $k => $img){
+            $this->content .= '<img src="'.$folder.'/Img/'.$img.'" alt="">';
+        }
+
         $this->content .= '</div>';
 
-        <h2>Images Result</h2>
-        <div class="" id="imageBox">
-            <img src="image0.jpg" alt="">
-            <img src="image0.jpg" alt="">
-            <img src="image0.jpg" alt="">
-            <img src="image0.jpg" alt="">
-        </div>
-
+        $this->content .= '
         <h2>Entity Result</h2>
-        <div class="" id="entityBox">
+        <div class="" id="entityBox">';
 
-        </div>
+        $this->content .= '</div>';
     }
 
 
@@ -115,7 +113,30 @@ class View {
     public function makeGraphPage($feedback){
         $this->title = 'Knowledge Acquisition Pipeline';
         $this->feedback = $feedback;
-        $this->content = '';
+        $this->content = '
+        <section class="sectionMenu">
+            <nav class="resultMenu">
+                <a id="graph1" href="#graph1">Graph1</a>
+                <a id="graph2" href="#graph2">Graph2</a>
+                <a id="graph3" href="#graph3">Graph3</a>
+                <a href="#">Other</a>
+            </nav>
+        </section>';
+
+        $this->content .= '
+        <section class="graphSection" id="graphS1">
+            <p>graph1</p>
+        </section>';
+
+        $this->content .= '
+        <section class="graphSection fantome" id="graphS2">
+            <p>graph2</p>
+        </section>';
+
+        $this->content .= '
+        <section class="graphSection fantome" id="graphS3">
+            <p>graph3</p>
+        </section>';
     }
 
 

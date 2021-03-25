@@ -35,6 +35,10 @@ ul {
     margin-right: auto;
 }
 
+.fantome {
+    display: none;
+}
+
 
 /* ----- Header ----- */
 .menu {
