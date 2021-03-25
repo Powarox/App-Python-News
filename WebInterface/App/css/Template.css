@@ -21,6 +21,20 @@ ul {
     font-size: 30px;
 }
 
+.feedback {
+    color: white;
+    width: 600px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+	background: #499F68;
+    border: solid 2px #499F68;
+    border-radius: 10px;
+	padding: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* ----- Header ----- */
 .menu {
@@ -96,6 +110,8 @@ main {
 #linkInputGhost {
     display: none;
 }
+
+
 
 
 
@@ -207,8 +223,87 @@ main {
 
 
 
+/* ----- Result Page ----- */
+.resultSection {
+    margin: 0 5%;
+}
+
+.resultSection h2 {
+    padding: 10px;
+    border-bottom: 2px solid #DDD;
+}
+
+.resultSection #contentBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.resultSection #contentBox .card {
+    margin: 10px 10px;
+    padding: 0 10px;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+}
+
+
+
+.resultSection #imageBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.resultSection #imageBox img {
+    width: 600px;
+    border-radius: 5px;
+    margin: 15px auto;
+}
+
+
+
+/* ----- Result Menu ----- */
+
+.sectionMenu {
+    position: fixed;
+    bottom: 5%;
+    right: 35%;
+    left: 35%;
+    /* width: 30%; */
+}
+
+.resultMenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #DDD;
+    border: 2px solid #DDD;
+    border-radius: 10px;
+}
+
+.resultMenu a {
+    padding: 10px 15px;;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #DDD;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.resultMenu a:hover {
+    color: #DDD;
+    background: #333
+}
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+
+
 /* ----- Preview Meta Section ----- */
-.previewMeta {
+/* .previewMeta {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -241,18 +336,4 @@ main {
 
 #elemP {
     background: #EEE;
-}
-
-
-
-
-
-/* ----- Footer ----- */
-footer {
-    width: 100%;
-    bottom: 10px;
-    text-align: center;
-}
-
-
-/*  */
+} */

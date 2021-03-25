@@ -42,7 +42,7 @@ class Control {
         $_SESSION['upload'] = 'link';
         $exemple = $_POST;
 
-        // var_dump($exemple['link'][0]);
+        var_dump($exemple['link'][0]);
 
         $folder = 'App/Files/'.$exemple['link'][0];
         $file = '/JsonContentFile.json';
@@ -53,7 +53,7 @@ class Control {
 
         var_dump($data);
 
-        $this->view->makeResultPage($this->feedback);
+        $this->view->makeResultPage($data, $folder, $this->feedback);
     }
 
     public function upload(){

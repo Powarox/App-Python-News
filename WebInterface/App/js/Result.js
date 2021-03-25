@@ -23,30 +23,3 @@ select.addEventListener('change', (ev) => {
         ghost.value = 'Ex3'
     }
 })
-
-
-
-// let content = document.getElementById('contentBox')
-// let image = document.getElementById('imageBox')
-// let entity = document.getElementById('entityBox')
-//
-// let folder = '../Python/Result/Ex1/JsonContentFile.json'
-// let test = 'JsonContentFile.json'
-//
-// let data = json.parse(test);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

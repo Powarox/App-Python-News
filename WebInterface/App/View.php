@@ -25,7 +25,7 @@ class View {
 
                 <input id="linkInputGhost" type="text" name="link[]" value=""">
                 <input id="linkInput" type="text" name="link[]" value="" placeholder="http://...">
-                
+
                 <button id="linkButton" type="submit" name="button"><i class="fas fa-cog"></i> Analyse</button>
             </form>
         </section>
@@ -62,36 +62,51 @@ class View {
 
 
 // ################ Result ################ //
-    public function makeResultPage($feedback){
+    public function makeResultPage($data, $folder, $feedback){
         $this->title = 'Knowledge Acquisition Pipeline';
         $this->feedback = $feedback;
         $this->content = '
-        <h2>Content Result</h2>
-
-        <section class="previewInfo">
-            <nav class="sectionMenu">
+        <section class="sectionMenu">
+            <nav class="resultMenu">
                 <a href="#contentBox">Content</a>
                 <a href="#imageBox">Image</a>
                 <a href="#entityBox">Entity</a>
-                <a href="#">IPC</a>
                 <a href="#">Other</a>
             </nav>
-        </section>
+        </section>';
 
+        $this->content .= '
         <section class="resultSection">
+            <h2>Content Result</h2>
             <div class="" id="contentBox">
+                <div class="card">';
+        foreach($data['content'] as $key => $value){
+            $this->content .= '<p>'.$value.'</p>';
+            if($key % 10 == 0){
+                $this->content .= '</div>
+                <div class="card">';
+            }
+        }
+        $this->content .= '</div>';
+        $this->content .= '
+        <h2>Images Result</h2>
+        <div class="" id="imageBox">';
 
-            </div>
+        $this->content .= '</div>';
+        $this->content .= '</div>';
 
-            <div class="" id="imageBox">
+        <h2>Images Result</h2>
+        <div class="" id="imageBox">
+            <img src="image0.jpg" alt="">
+            <img src="image0.jpg" alt="">
+            <img src="image0.jpg" alt="">
+            <img src="image0.jpg" alt="">
+        </div>
 
-            </div>
+        <h2>Entity Result</h2>
+        <div class="" id="entityBox">
 
-            <div class="" id="entityBox">
-
-            </div>
-        </section>
-        ';
+        </div>
     }
 
 
