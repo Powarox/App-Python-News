@@ -11,19 +11,19 @@ class Utilitary:
 
     # WordCloud Save Image
     def wordCloudSave(self, elem, name):
-        WordCloud.to_file(elem, "../Python/Result/" + self.folder + name)
+        WordCloud.to_file(elem, self.path + self.folder + name)
 
     # MathplotLib Save Image
     def matplotlibSave(self, name):
-        plt.savefig("../Python/Result/" + self.folder + name, format = "png")
+        plt.savefig(self.path + self.folder + name, format = "png")
 
     # Save Img from url
     def saveImgUrl(self, url, name):
-        urllib.request.urlretrieve(url, '../Python/Result/' + name)
+        urllib.request.urlretrieve(url, self.path + name)
 
     # Save data to json file
     def saveFile(self, data, name):
-        with open('../Python/Result/' + name + '.json', "w") as filout:
+        with open(self.path + name + '.json', "w") as filout:
             result = data
             filout.write(result)
 

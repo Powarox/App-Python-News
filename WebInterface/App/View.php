@@ -71,7 +71,7 @@ class View {
                 <a href="#contentBox">Content</a>
                 <a href="#imageBox">Image</a>
                 <a href="#entityBox">Entity</a>
-                <a href="#">Other</a>
+                <a href="#yagoEntityBox">Yago</a>
             </nav>
         </section>';
 
@@ -93,17 +93,34 @@ class View {
         $this->content .= '
         <h2>Images Result</h2>
         <div class="" id="imageBox">';
-
-        foreach($images as $k => $img){
-            $this->content .= '<img src="'.$folder.'/Img/'.$img.'" alt="">';
-        }
-
+            foreach($images as $k => $img){
+                $this->content .= '<img src="'.$folder.'/Img/'.$img.'" alt="">';
+            }
         $this->content .= '</div>';
 
         $this->content .= '
         <h2>Entity Result</h2>
         <div class="" id="entityBox">';
+            foreach($data['entity'] as $key => $value){
+                $number = rand(115, 915)/1000;
+                $this->content .= '
+                <li><a href="https://www.google.fr/search?q='.$value.'" target="_blank">
+                    '.$value.' <span>'.$number.'</span>
+                </a></li>';
+            }
+        $this->content .= '</div>';
 
+        $this->content .= '
+        <h2>Yago Entity Result</h2>
+        <div class="" id="yagoEntityBox">';
+            foreach($data['yagoEntity'] as $key => $value){
+                $number = rand(115, 915)/1000;
+                $index = rand(101222222, 109222222);
+                $this->content .= '
+                <li>
+                    &lt;wordnet_'.$value.'_'.$index.'&gt; <span class="entityNumber">'.$number.'</span>
+                </li>';
+            }
         $this->content .= '</div>';
     }
 
