@@ -1,5 +1,5 @@
-"# Knowledge-Acquisition"
-
+# Knowledge-Acquisition
+![](https://tokei.rs/b1/github/Powarox2159/Knowledge-Acquisition)
 
 Exemple 1 : https://www.bbc.com/news/newsbeat-56264594
 
